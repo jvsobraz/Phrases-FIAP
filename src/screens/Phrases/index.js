@@ -17,7 +17,6 @@ export default function Phrases() {
         "Teste de frase 8",
         "Teste de frase 9",
         "Teste de frase 10",
-        "Teste de frase 11",
     ];
 
     return(
