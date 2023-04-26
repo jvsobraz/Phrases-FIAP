@@ -7,10 +7,10 @@
 <br/>
 
 <h2> 
-    Descriçao do projeto
+    Descrição do projeto
 </h2>
 <p> 
-   Este projeto foi criado com o intuito de aprender mais sobre react native, e ele nos dá frases aleatorias
+   Este projeto foi criado com o intuito de aprender mais sobre react native, e ele nos dá frases aleatórias
 </p>
 
 <br/>
@@ -30,7 +30,7 @@ Depois instale as dependências:
 
 ``` npm install ```
 
-Por fim, estarte o expo e escolha uma plataforma:
+Por fim, start o expo e escolha uma plataforma:
 
 ``` expo start ```
 
