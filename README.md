@@ -1,9 +1,5 @@
 <h1 align="center">Frases 📝 </h1>
 
- <h4 align="center"> 
-    :construction:  Projeto em construção  :construction:
-</h4>
-
 <br/>
 
 <h2> 
