@@ -1,42 +1,36 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from 'react';
+import { useAsyncStorage } from '@react-native-async-storage/async-storage'
 import {
-    Container,
-    PhraseText,
-    PhraseButton,
-    PhraseButtonText
-} from "./styles";
+  Container,
+  PhraseText,
+  PhraseButton,
+  PhraseButtonText
+} from './styles';
 
-export default function Home() {} 
-    export default function Phrases() {
-        const phrases = [
-            "Teste de frase 1",
-            "Teste de frase 2",
-            "Teste de frase 3",
-            "Teste de frase 4",
-            "Teste de frase 5",
-            "Teste de frase 6",
-            "Teste de frase 7",
-            "Teste de frase 8",
-            "Teste de frase 9",
-            "Teste de frase 10",
-        ]; 
+export default function Home() {
+  const { getItem } = useAsyncStorage('@phrases');
 
-        const [phrase, setPhrase] = useState(phrases[0]);
+  const [phrase, setPhrase] = useState();
 
-        const randomPhrase = () => {
-            setPhrase(phrases[Math.floor(Math.random) * phrases.length])
-        }
+  const loadPhrases = async () => {
+    const stringPhrases = await getItem();
+    const parsedPhrases = JSON.parse(stringPhrases);
 
-        useEffect(() => {
-            randomPhrase();
-        }, [])
+    if (parsedPhrases && parsedPhrases.length > 0) {
+      setPhrase(parsedPhrases[Math.floor(Math.random() * parsedPhrases.length)])
+    }
+  }
 
-        return (
-            <Container>
-                <PhraseText>{phrase}</PhraseText>
-                <PhraseButton onPress={() => randomPhrase()}>
-                    <PhraseButtonText>Mudar Frase</PhraseButtonText>
-                </PhraseButton>
-            </Container>
-        )
-     }
+  useEffect(() => {
+    loadPhrases();
+  }, []);
+
+  return (
+    <Container>
+      <PhraseText>{phrase}</PhraseText>
+      <PhraseButton onPress={() => loadPhrases()}>
+        <PhraseButtonText>Mudar frase</PhraseButtonText>
+      </PhraseButton>
+    </Container >
+  );
+}
