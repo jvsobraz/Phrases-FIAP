@@ -6,7 +6,7 @@
     Descrição do projeto
 </h2>
 <p> 
-   Este projeto foi criado com o intuito de aprender mais sobre react native, e ele nos dá frases aleatórias
+   Este projeto foi criado com o intuito de aprender mais sobre React Native para as aulas da faculdade FIAP.
 </p>
 
 <br/>
