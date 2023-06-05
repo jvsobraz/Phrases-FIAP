@@ -55,6 +55,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
+    // {user.type === 'doador' ? <TabDoador/> : <TabOng />}
       <TabsPhrases />
     </NavigationContainer>
   )
